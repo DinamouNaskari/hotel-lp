@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP Hôtel - Chambres</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Ajouter un peu d'espace autour des images */
+        .img-fluid {
+            margin-bottom: 15px;
+            cursor: pointer; /* Changer le curseur pour indiquer que l'image est cliquable */
+        }
+
+        /* Ajouter une bordure autour des images */
+        .img-fluid.rounded {
+            border: 1px solid #ddd;
+        }
+
+        /* Style pour la fenêtre modale */
+        .modal {
+            display: none; /* Masquer la fenêtre modale par défaut */
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+        }
+
+        .modal-content {
+            margin: 15% auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 700px;
+            background: #fff; /* Fond blanc pour le contenu */
+            border-radius: 8px; /* Bords arrondis */
+        }
+
+        .modal-content img {
+            width: 100%; /* Adapter l'image à la largeur de la fenêtre modale */
+            border-bottom: 1px solid #ddd; /* Ligne de séparation entre l'image et le texte */
+        }
+
+        .modal-content h3 {
+            margin: 15px 0;
+            text-align: center;
+        }
+
+        .modal-content p {
+            text-align: center;
+        }
+
+        .modal-content .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* Style pour les prix cliquables */
+        .price {
+            cursor: pointer; /* Changer le curseur pour indiquer que le prix est cliquable */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">HOTEL LP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chambres.html">Chambres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historique.html">Historique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chambres -->
+    <div class="container my-5">
+        <h2 class="text-center">Nos Chambres</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-4">
+                <img src="assets/images/lit1.jpg" class="img-fluid rounded" alt="Chambre Simple" onclick="openModal('assets/images/lit1.jpg', 'Chambre Simple', '10,000 FCFA')">
+                <h3>Chambre Simple</h3>
+                <p class="price" onclick="openModal('assets/images/lit1.jpg', 'Chambre Simple', '10,000 FCFA')">Prix: 10,000 FCFA</p>
+            </div>
+            <div class="col-md-4">
+                <img src="assets/images/salon1.jpg" class="img-fluid rounded" alt="Chambre Double" onclick="openModal('assets/images/salon1.jpg', 'Chambre Double', '15,000 FCFA')">
+                <h3>Chambre Double</h3>
+                <p class="price" onclick="openModal('assets/images/salon1.jpg', 'Chambre Double', '15,000 FCFA')">Prix: 15,000 FCFA</p>
+            </div>
+            <div class="col-md-4">
+                <img src="assets/images/lp.jpg" class="img-fluid rounded" alt="Suite Présidentielle" onclick="openModal('assets/images/lp.jpg', 'Suite Présidentielle', '30,000 FCFA')">
+                <h3>Suite Présidentielle</h3>
+                <p class="price" onclick="openModal('assets/images/lp.jpg', 'Suite Présidentielle', '30,000 FCFA')">Prix: 30,000 FCFA</p>
+            </div>
+        </div>
+
+        <!-- Équipements -->
+        <div class="row text-center amenities mt-4">
+            <div class="col-md-4">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-wifi" viewBox="0 0 16 16">
+                    <path d="M15.384 6.115a.485.485 0 0 0-.047-.736A12.44 12.44 0 0 0 8 3C5.259 3 2.723 3.882.663 5.379a.485.485 0 0 0-.048.736.52.52 0 0 0 .668.05A11.45 11.45 0 0 1 8 4c2.507 0 4.827.802 6.716 2.164.205.148.49.13.668-.049"/>
+                    <path d="M13.229 8.271a.482.482 0 0 0-.063-.745A9.46 9.46 0 0 0 8 6c-1.905 0-3.68.56-5.166 1.526a.48.48 0 0 0-.063.745.525.525 0 0 0 .652.065A8.46 8.46 0 0 1 8 7a8.46 8.46 0 0 1 4.576 1.336c.206.132.48.108.653-.065m-2.183 2.183c.226-.226.185-.605-.1-.75A6.5 6.5 0 0 0 8 9c-1.06 0-2.062.254-2.946.704-.285.145-.326.524-.1.75l.015.015c.16.16.407.19.611.09A5.5 5.5 0 0 1 8 10c.868 0 1.69.201 2.42.56.203.1.45.07.61-.091zM9.06 12.44c.196-.196.198-.52-.04-.66A2 2 0 0 0 8 11.5a2 2 0 0 0-1.02.28c-.238.14-.236.464-.04.66l.706.706a.5.5 0 0 0 .707 0l.707-.707z"/>
+                </svg>
+                <p>WI-FI Direct</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fenêtre modale -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImg" src="" alt="Image agrandie">
+            <h3 id="modalTitle"></h3>
+            <p id="modalPrice"></p>
+        </div>
+    </div>
+
+    <script>
+        // Fonction pour ouvrir la fenêtre modale
+        function openModal(imgSrc, title, price) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("modalImg");
+            var modalTitle = document.getElementById("modalTitle");
+            var modalPrice = document.getElementById("modalPrice");
+
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            modalTitle.innerText = title;
+            modalPrice.innerText = 'Prix: ' + price;
+        }
+
+        // Fonction pour fermer la fenêtre modale
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        // Fermer la fenêtre modale si l'utilisateur clique en dehors de celle-ci
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

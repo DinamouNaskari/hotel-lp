@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LP Hôtel - Accueil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Animation zoom sur les images */
+        .img-fluid {
+            transition: transform 0.3s ease;
+        }
+
+        .img-fluid:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+
+            <a class="navbar-brand" href="index.html">HOTEL LP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Accueil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="restaurant.html">Restaurant</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="chambres.html">Chambres</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historique.html">Historique</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <div class="banner text-center">
+        <img src="assets/images/salon2.jpg" class="img-fluid" alt="LP Hôtel Banner">
+        <div class="banner-text">
+            <h1>Bienvenue à LP Hôtel</h1>
+            <p>Un endroit de luxe et de confort à N'Djamena</p>
+        </div>
+    </div>
+
+    <!-- Section sur les services -->
+    <div class="container services my-5">
+        <h2 class="text-center">Nos Services</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-4">
+                <img src="assets/images/poisson1.png" class="img-fluid rounded" alt="Restaurant">
+                <h3>Restaurant</h3>
+                <p>Découvrez des plats délicieux et variés dans notre restaurant.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="assets/images/lit1.jpg" class="img-fluid rounded" alt="Chambres">
+                <h3>Chambres</h3>
+                <p>Des chambres luxueuses et confortables à votre disposition.</p>
+            </div>
+            <div class="col-md-4">
+                <img src="assets/images/pissine.jpg" class="img-fluid rounded" alt="Spa">
+                <h3>Spa & Bien-être</h3>
+                <p>Un espace de détente pour se relaxer après une longue journée.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4">
+        <p>&copy; 2024 LP Hôtel - Tous droits réservés</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
